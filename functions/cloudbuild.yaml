@@ -14,4 +14,4 @@ steps:
   - hello_gcs
   - --trigger-bucket=ca-kurata-function-test
   - --runtime=python38
-  - --source=.
+  - --source=functions
