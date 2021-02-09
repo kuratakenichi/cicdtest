@@ -13,5 +13,5 @@ steps:
   - hello_gcs
   - --trigger-bucket=ca-kurata-function-test
   - --runtime=python38
-#   - --source=functions
+  - --source=.
 # [END functions_ci_cd_cloud_build]
