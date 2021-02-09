@@ -13,8 +13,8 @@
 # limitations under the License.
 
 # [START functions_storage_unit_test]
-import mock
-
+# import mock
+from unittest import mock
 import main
 
 
