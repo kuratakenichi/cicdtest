@@ -1,11 +1,12 @@
-# [START functions_ci_cd_cloud_build]
 steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args: [ '-c', 'ls -la']
+
 - name: 'docker.io/library/python:3.8'
-  entrypoint: /bin/sh
-  # Run pip install and pytest in the same build step
-  # (pip packages won't be preserved in future steps!)
-  args: [-c, 'pip install -r requirements.txt && pytest']
-  dir: 'function/dir/from/repo/root'
+  entrypoint: 'bash'
+  args: ['functions/run_pytest.sh']
+
 - name: 'gcr.io/cloud-builders/gcloud'
   args:
   - functinos
@@ -14,4 +15,3 @@ steps:
   - --trigger-bucket=ca-kurata-function-test
   - --runtime=python38
   - --source=functions
-# [END functions_ci_cd_cloud_build]
