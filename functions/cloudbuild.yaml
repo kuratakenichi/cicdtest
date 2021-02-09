@@ -9,7 +9,7 @@ steps:
 
 - name: 'gcr.io/cloud-builders/gcloud'
   args:
-  - functinos
+  - functions
   - deploy
   - hello_gcs
   - --trigger-bucket=ca-kurata-function-test
