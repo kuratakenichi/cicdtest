@@ -7,6 +7,11 @@ steps:
   args: [-c, 'pip install -r requirements.txt && pytest']
   dir: 'function/dir/from/repo/root'
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['functions', 'deploy', 'hello_gcs', '--trigger-bucket', '--runtime', 'python38', '--entry-point', 'hello_gcs']
-  dir: 'function/dir/from/repo/root'
+  args:
+  - functinos
+  - deploy
+  - hello_gcs
+  - --trigger-bucket=ca-kurata-function-test
+  - --runtime=python38
+  - --source=functions
 # [END functions_ci_cd_cloud_build]
