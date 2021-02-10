@@ -3,6 +3,10 @@ steps:
   entrypoint: 'bash'
   args: [ '-c', 'ls -la']
 
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args: [ 'functions/sqlcopy.sh', ${_PROJECT_ID} ]
+
 - name: 'docker.io/library/python:3.8'
   entrypoint: 'bash'
   args: ['functions/run_pytest.sh']
@@ -15,3 +19,4 @@ steps:
   - --trigger-bucket=ca-kurata-function-test
   - --runtime=python38
   - --source=functions
+
